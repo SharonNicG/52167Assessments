@@ -1,6 +1,7 @@
 # Sharon Gibbons, 04-02-2018
 # A program that displays Fibonacci numbers using people's names.
-# https://github.com/ianmcloughlin/python-fib
+# https://github.com/ianmcloughlin/python-fib/blob/master/fib.py
+# https://github.com/ianmcloughlin/python-fib/blob/master/fibname.py
 
 def fib(n):
   """This function returns the nth Fibonacci number."""
