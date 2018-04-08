@@ -1,40 +1,42 @@
-# Sharon Gibbons, 04-03-2018
+# Sharon Gibbons, 11-03-2018
 # Project Euler Problem 5: Smallest multiple
 # https://projecteuler.net/problem=5
 # https://www.programiz.com/python-programming/examples/lcm
 
-# Python Program to find the least common multiple for a range of numbers
+# Python program to find the least common multiple for a range of numbers
 
 # defines function
 def findlcm(x, y):
-    
-    if x >= y:    # identifies number that greater than or equal to input integers
-        greater = x
+
+    # identifies numbers that are greater than and lesser than input integers
+    if x > y:
+       a, b = x, y          # a = greater number, b = lesser number
     else:
-        greater = y
+       a, b = y, x
+    
+    # checks if a division of the greater by lesser number is even
+    r = a % b
 
-    # indefinite/infinite while loop evaluating the above conditional expression
-    while(True):
+    while r != 0:   # loop to execute if a division of the greater by lesser number is not even
+        a, b = b, r
+        r = a % b
+    
+    # gcd is common factor of input integers
+    gcd = b
 
-       # checks if number is evenly divisible by input integers
-        if((greater % x == 0) and (greater % y == 0)): 
-
-           # if evenly divisible then the number is stored and the loop is broken
-            lcm = greater
-            break
-
-        # if number if not evenly divisible number increments and loop continues
-        greater = greater + 1
+    # least common multiple is the computation of the product of the input integers divided by gcd
+    # https://codility.com/media/train/10-Gcd.pdf
+    lcm = int(int(x * y) / int(gcd))
 
     # output
     return lcm
 
 # sets variables and keyword argument
 l = range(1, 21)
- 
-a = l[0]
-b = l[1]
-lcm = findlcm(a, b)
+
+x = l[0]
+y = l[1]
+lcm = findlcm(x, y)
 
 # iterates called function over sequence
 for i in range(1,20):
