@@ -5,18 +5,22 @@
 
 # Python program to find the least common multiple for a range of numbers
 
-# defines findgcd function (find greatest common factor/divisor)
+# defines function
     # https://codility.com/media/train/10-Gcd.pdf
 def findgcd(x, y):
+    """This function returns the greatest common factor/divisor."""
+
     if x % y == 0:  # if statement to identify 
         return y
     else:
         return findgcd(y, x % y)
 
-# defines findlcm function (find least common multiple)
-    # least common multiple is the computation of the product of the input integers divided by gcd of the input integers
+# defines findlcm function
     # https://codility.com/media/train/10-Gcd.pdf
 def findlcm(x, y):
+    """This function returns the least common multiple."""
+
+    # least common multiple is the computation of the product of the input integers divided by gcd of the input integers
     lcm = int(int(x * y) // int(findgcd(x, y)))
     return lcm
 
